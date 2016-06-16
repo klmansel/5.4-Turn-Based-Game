@@ -1,0 +1,55 @@
+$black: #000;
+$red: #d00;
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.wrapper { //Need to make backgroung transparant
+  background: url('../images/dcpic.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  position: relative;
+
+  // ::before {
+  //   background-color: rgba(255,	255, 255, .3);
+  //   bottom: 0;
+  //   content: '';
+  //   display: block;
+  //   left: 0;
+  //   max-width: 100%;
+  //   opacity: 9;
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  // }
+
+}
+
+.attack-button {
+  background-color: $black;
+  color: $red;
+  font-family: fantasy;
+  font-size: 20px;
+  position: relative;
+}
+
+//Health Bar
