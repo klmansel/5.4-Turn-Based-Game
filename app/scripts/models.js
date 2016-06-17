@@ -1,5 +1,6 @@
 var $ = require('jquery');
 
+
 function choosePlayer(){
  var goodGuys = $('.good-guys');
  var hero = (goodGuys.val());
@@ -71,15 +72,3 @@ module.exports = {
 'choosePlayer' : choosePlayer
 
 };
-
-
-
-
-
-// console.log(Enemy());
-// module.exports = {
-//   // 'Player' : Player
-//   'Hero': Hero,
-//   'Enemy': Enemy
-//
-// };
