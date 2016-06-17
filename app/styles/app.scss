@@ -21,7 +21,7 @@ img {
 }
 
 h1 {
-  color: $silver;
+  color: $black;
   font-family: 'Orbitron', sans-serif;
   font-weight: bold;
   margin-top: 0;
@@ -29,11 +29,12 @@ h1 {
 }
 
 h2 {
-  color: $silver;
+  color: $black;
+  display: inline-block;
   font-family: 'Orbitron', sans-serif;
 }
 
-.wrapper { //Need to make backgroung transparant
+.wrapper { //Need to make background transparant
   background: url('../images/dcpic.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,7 +57,7 @@ h2 {
 }
 
 .attack-button {
-  background-color: $silver;
+  background-color: $black;
   color: $red;
   font-family: 'Orbitron', sans-serif;
   font-size: 20px;
