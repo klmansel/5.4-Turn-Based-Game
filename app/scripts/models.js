@@ -7,31 +7,24 @@ function choosePlayer(){
  console.log(hero); //gets the value of the chosen good guy
   $('.hero-text').text('You have chosen ' + hero +'!' + ' Now ATTACK!');
 }
-//
-// function Player(config){
-//   config = config || {};
-//   $.extend(this,config);
-//   this.name= config.name;
-//   this.health=config.health;
-//   this.powers=config.powers;
-// }
-//
-// // function Enemy(name,health, powers){
-// //   Player.call(legionOfDoom);
-// //
-// //   var legionOfDoom = [
-// //     new Enemy({'name': "Lex Luthor", 'health': 10, 'powers':'brains'}),
-// //     new Enemy({'name': "The Joker", 'health': 10, 'powers':'poisonous gas'}),
-// //     new Enemy({'name': "Cheetah", 'health': 10, 'powers':'claws'}),
-// //     new Enemy({'name': "Black Manta", 'health': 10, 'powers':'energy blast'}),
-// //     new Enemy({'name': "Sinestro", 'health': 10, 'powers':'yellow power ring'}),
-// //     new Enemy({'name': "Zoom", 'health': 10, 'powers':'phase attack'}),
-// //   ];
-// //   console.log(legionOfDoom);
-// // }
-// //
-//
-//
+
+function Player(name, health, powers){
+  this.name= name;
+  this.health= health;
+  this.powers= powers;
+}
+
+
+function Enemy(name, health, powers){
+  //this => new enemy object
+  Player.call(this, name, health, powers);
+}
+
+Enemy.prototype = new Player();
+
+
+
+//Clean Up code below to match Enemy code
 //
 // function Hero(name,health, powers){
 //   Player.call(justiceLeague);
@@ -44,31 +37,13 @@ function choosePlayer(){
 //     new Hero({'name': "Green Lantern", 'health': 10, 'powers':'energy blast, mental construct attact, force field'}),
 //     new Hero({'name': "The Flash", 'health': 10, 'powers':'super speed, vortex attack, speed force punch'}),
 //   ];
-//   console.log(legionOfDoom);
-// }
 //
-// function Enemy(name,health, powers){
-//   Player.call(legionOfDoom);
-//
-//   var legionOfDoom = [
-//     new Enemy({'name': "Lex Luthor", 'health': 10, 'powers':'outsmart enemy'}),
-//     new Enemy({'name': "The Joker", 'health': 10, 'powers':'poisonous gas'}),
-//     new Enemy({'name': "Cheetah", 'health': 10, 'powers':'claws'}),
-//     new Enemy({'name': "Black Manta", 'health': 10, 'powers':'atlantean attack'}),
-//     new Enemy({'name': "Sinestro", 'health': 10, 'powers':'yellow power ring'}),
-//     new Enemy({'name': "Zoom", 'health': 10, 'powers':'phase attack'}),
-//   ];
-//   console.log(legionOfDoom);
-// }
-//
-//
-//
-//
-// console.log(Enemy());
 
-//
+//make powers options objects and make menu show list of all 3 choices of powers
+
 
 module.exports = {
-'choosePlayer' : choosePlayer
+'choosePlayer' : choosePlayer,
+'Enemy' : Enemy
 
 };
