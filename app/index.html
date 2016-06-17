@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>5 4 Turn Based Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
   </head>
 
   <body>
-    <div class=" container-fluid">
+    <div class="container-fluid">
     <div class="row">
     <div class="col-md-12 background wrapper">
       <h1>Injustice</h1>
@@ -24,6 +25,13 @@
         <option value="the-flash">The Flash</option>
       </select>
       <button class="attack-button btn btn-xl">Attack</button>
+<!--Progress Bar Hero-->
+      <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70"
+        aria-valuemin="0" aria-valuemax="100" style="width:70%">
+      <span class="sr-only">70% Complete</span>
+      </div>
+      </div>
 
       <h2>The Legion of Doom</h2>
       <select name="bad-guys"> <!--delete these and insert using jquery or handlebars-->
@@ -34,12 +42,19 @@
         <option value="sinestro">Sinestro</option>
         <option value="zoom">Zoom</option>
       </select>
+  <!--Progress Bar Villian-->
+      <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70"
+        aria-valuemin="0" aria-valuemax="100" style="width:70%">
+      <span class="sr-only">70% Complete</span>
+      </div>
+      </div>
 
     </div>
     </div>
-
+    </div>
     <script src="js/bundle.js"></script>
-    </div>
+
   </body>
 
 </html>
