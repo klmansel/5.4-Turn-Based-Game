@@ -6,7 +6,7 @@ function choosePlayer(){
  console.log(hero); //gets the value of the chosen good guy
   $('.hero-text').text('You have chosen ' + hero +'!' + ' Now ATTACK!');
 }
-// 
+//
 // function Player(config){
 //   config = config || {};
 //   $.extend(this,config);
@@ -71,3 +71,15 @@ module.exports = {
 'choosePlayer' : choosePlayer
 
 };
+
+
+
+
+
+// console.log(Enemy());
+// module.exports = {
+//   // 'Player' : Player
+//   'Hero': Hero,
+//   'Enemy': Enemy
+//
+// };

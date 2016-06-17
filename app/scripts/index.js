@@ -18,10 +18,10 @@ $('.good-guys').on('change', function(){
   models.choosePlayer();
 });
 
+//Display player's powers.  The player should manually select the "Fight" action to attack. 
 
+//Create on load event for random enemy choice
 
+//show image when button is clicked.
 
-
-
-
-// });
+//animate images once images show up on screen.
