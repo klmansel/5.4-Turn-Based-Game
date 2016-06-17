@@ -22,12 +22,12 @@
     "jquery": "^2.2.0",
     "underscore": "^1.8.3"
     , "bootstrap-sass": "^3.3.6"
-    
+
     , "handlebars": "^4.0.5"
     , "hbsfy": "^2.5.1"
-    
-    
-    
+
+
+
   },
   "scripts": {
     "html": "cp app/*.html dist/",
@@ -55,12 +55,13 @@
     "watch:images": "npm run build:images && onchange 'app/images/*' -- npm run build:images",
     "server": "live-server --open='dist'",
     "watch": "parallelshell 'npm run watch:html' 'npm run watch:scss' 'npm run watch:images' 'npm run watch:js' 'npm run server'"
+  
   },
   "browserify": {
     "transform": [
       "browserify-shim",
       "hbsfy",
-      
+
       "strictify"
     ]
   },
