@@ -25,25 +25,20 @@ Enemy.prototype = new Player();
 
 
 //Clean Up code below to match Enemy code
-//
-// function Hero(name,health, powers){
-//   Player.call(justiceLeague);
-//
-//   var justiceLeague = [
-//     new Hero({'name': "Superman", 'health': 10, 'powers':'heat vision, super strength, invulnerability'}),
-//     new Hero({'name': "Batman", 'health': 10, 'powers':'super awesome ninja skills, batarangs, sidekick assist'}),
-//     new Hero({'name': "Wonder Woman", 'health': 10, 'powers':'super strength, lasso of truth, deflect with indestructible bracelets'}),
-//     new Hero({'name': "Aquaman", 'health': 10, 'powers':'trident of neptune, super strength, telepathic shark attack'}),
-//     new Hero({'name': "Green Lantern", 'health': 10, 'powers':'energy blast, mental construct attact, force field'}),
-//     new Hero({'name': "The Flash", 'health': 10, 'powers':'super speed, vortex attack, speed force punch'}),
-//   ];
-//
+
+function Hero(name,health, powers){
+  Player.call(this, name,health, powers);
+}
+
+Hero.prototype = new Player();
+
 
 //make powers options objects and make menu show list of all 3 choices of powers
 
 
 module.exports = {
 'choosePlayer' : choosePlayer,
-'Enemy' : Enemy
+'Enemy' : Enemy,
+'Hero' : Hero
 
 };
