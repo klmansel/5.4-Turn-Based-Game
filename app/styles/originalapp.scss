@@ -1,0 +1,77 @@
+$black: #000;
+$silver: #999;
+$red: #d00;
+$white: #fff;
+
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  color: $black;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  color: $black;
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.wrapper { //Need to make background transparant
+  background: url('../images/dcpic.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  position: relative;
+
+  // ::after {
+  //   background-color: rgba(255, 255, 255,.3);
+  //   bottom: 0;
+  //   content: '';
+  //   display: block;
+  //   left: 0;
+  //   max-width: 100%;
+  //   opacity: 2;
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  // }
+
+}
+
+.attack-button {
+  background-color: $black;
+  color: $red;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+
+  &:hover {
+    background-color: darken($silver, 50%);
+    color: $white;
+  }
+}
+
+.new-game {
+  @extend .attack-button;
+}
+//Health Bar
