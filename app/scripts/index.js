@@ -9,21 +9,37 @@ var models = require('./models.js');
 
 
 $(document).ready(function(){
-//Random enemy generated
+  //Start New Game Button
+  $('.new-game').click(function() {
+      location.reload();
+  });
+
+  //Enemy array
   var legionOfDoom = [
-    new models.Enemy( "Lex Luthor", 10, 'brains'),
+    new models.Enemy( "Lex Luthor", 10,  'brains'),
     new models.Enemy("The Joker", 10, 'poisonous gas'),
     new models.Enemy("Cheetah", 10, 'claws'),
     new models.Enemy("Black Manta", 10, 'energy blast'),
     new models.Enemy( "Sinestro", 10, 'yellow power ring'),
-    new models.Enemy( "Zoom",  10, 'phase attack'),
+    new models.Enemy( "Zoom", 10, 'phase attack'),
   ];
-
+//Random enemy generated
   var generateEnemy = legionOfDoom[Math.floor(legionOfDoom.length * Math.random())];
-  console.log('Test Enemy',generateEnemy.name);
 
-  var villian = generateEnemy.name; //Create forEach loop to iterate over names in list and populate into jquery
+
+  var villian = generateEnemy.name;
   $('.villian-text').text('Your opponent is ' + villian +'!'+ ' Prepare to face defeat!');
+
+  //Below text should generate after Attack button click and setTimeout 1 sec
+  $('.villian-text').append("You have been hit by " + generateEnemy.powers + " --fight back!");
+
+  //Working on way to log enemy health --can't access health property
+  var attackValue = Math.floor(Math.random() * 5 + 1);
+  var heathStart = generateEnemy.health;
+  console.log(generateEnemy.health);
+  var enemyHealthStatus = generateEnemy.health - attackValue;
+  console.log(enemyHealthStatus);
+
 //Justice League and their properties
   var justiceLeague = [
     new models.Hero( "Superman", 10, ['heat vision', 'super strength', 'invulnerability']),
@@ -33,24 +49,31 @@ $(document).ready(function(){
     new models.Hero( "Green Lantern",  10, ['energy blast', 'mental construct attack', 'force field']),
     new models.Hero("The Flash", 10, ['super speed', 'vortex attack', 'speed force punch']),
   ];
+  //Logging Tests
+  // console.log('testing enemy:', legionOfDoom[2].name); //testing Enemy name
+  // console.log('testing hero:', justiceLeague[3].name);//testing Hero name
+  // console.log('testing powers:',justiceLeague[3].powers[1]); //testing powers array
+  // console.log(justiceLeague[1].health); //testing accessing health property
 
-  console.log(legionOfDoom[2].name); //testing Enemy name
-  console.log(justiceLeague[3].name);//testing Hero name
-  console.log(justiceLeague[3].powers[1]); //testing powers array
+//Need to rewrite justiceLeague and insert using jquery so we can use the value of Hero in
+
 
 
     $('.message').text('Welcome to Injustice! Please choose a player from the Justice League.');
+    $('.villian-health-status').text("Your opponent's power level is " + enemyHealthStatus +".");
+    $('powers-text').text('Choose your attack:');
 });
 
+//Need to temporarily disable to build template:
 $('.good-guys').on('change', function(){
   models.choosePlayer(); //this is because we are exporting the choosePlayer function from the models.js file
 });
 
 
-
-//Display player's powers.  The player should manually select the "Fight" action to attack.
-
-//Create on load event for random enemy choice
+//Decrease health value when attack-button is clicked
+// $('.attack-button').on('click', function(){
+//   models.healthStatus();
+// });
 
 //show image when button is clicked.
 

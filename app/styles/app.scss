@@ -3,6 +3,7 @@ $silver: #999;
 $red: #d00;
 $white: #fff;
 
+
 // Bootstrap Variables
 $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 
@@ -70,4 +71,7 @@ h2 {
   }
 }
 
+.new-game {
+  @extend .attack-button;
+}
 //Health Bar
