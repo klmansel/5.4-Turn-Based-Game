@@ -13,7 +13,11 @@ $(function(){
     new models.Hero({'name': "Green Lantern", 'health': 10, 'powers':['energy blast', 'green power ring constructs', 'force field']}),
     new models.Hero({'name': "Flash", 'health': 10, 'powers':['super speed', 'vortex attack', 'speed force punch']}),
   ];
-  console.log(justiceLeague);
+
+  var randomHero = justiceLeague[Math.floor(justiceLeague.length * Math.random())];
+  var randomHeroArray = randomHero.powers;
+  var randomHeroPower =randomHeroArray[Math.floor(randomHeroArray.length * Math.random())];
+  console.log(randomHeroPower);
 
   var legionOfDoom = [
     new models.Enemy({name: 'Lex Luthor', health: 10, power: 'outsmarts you with his superior intelligence'}),
@@ -23,7 +27,7 @@ $(function(){
     new models.Enemy({name: 'Sinestro', health: 10, power: 'attacks you with yellow power ring constructs'}),
     new models.Enemy({name: 'Captain Cold', health: 10, power: 'freezes you with cold gun'}),
   ];
-  console.log(legionOfDoom);
+
 
 
   /*
@@ -49,11 +53,6 @@ $(function(){
     var justiceLeaguer = $('.justice-league');
     var hero = (justiceLeaguer.val());
 
-    var heroPower = function(){
-      if (justiceLeague.name === hero){
-      console.log('power',justiceLeague.power);
-      }
-    };
     window.setTimeout(function(){
       $('.message-to-player').text(hero +'!');
     }, 2000);
@@ -69,6 +68,9 @@ $(function(){
     window.setTimeout(function(){
       $('.message-to-player').text('ATTACK!');
     }, 10000);
+    window.setTimeout(function(){
+      $('.message-to-player').text('You used '+ randomHeroPower + ' !');
+    }, 15000);
   }
 
   /*
@@ -76,7 +78,7 @@ $(function(){
    * This var generates a random villian.
    */
   var randomlyChooseVillian = legionOfDoom[Math.floor(legionOfDoom.length * Math.random())];
-  console.log(randomlyChooseVillian.name);
+
   var villian = randomlyChooseVillian.name;
 
   //this function reloads the game when the user clicks the "restart" button.
@@ -86,7 +88,6 @@ $(function(){
 
 
   var selectedHeroHealth = 10;
-  console.log('test:',selectedHeroHealth);
 
   function attackGenerator(){
     var attackValue = _.random(10);
